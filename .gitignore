@@ -1,0 +1,5 @@
+credentials/**/*.js
+shopeeProducts.log
+cjProducts.log
+node_modules
+.eslintrc.js
