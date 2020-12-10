@@ -3,26 +3,20 @@ dotenvResult = dotenv.config();
 if(dotenvResult.error) {
 	throw dotenvResult.error;
 }
-console.log(`
-environment variables
-${JSON.stringify(dotenvResult.parsed, null, 2)}
-========================
-`);
+const print = require("./helpers/print");
+print.welcome();
+if(!process.env.CJ_API_KEY || !process.env.SHOPEE_SHOP_ID || !process.env.SHOPEE_PARTNER_ID || !process.env.SHOPEE_PARTNER_KEY) {
+	print.envNotSet();
+	process.exit(0);
+}
+print.printEnv();
 
 const fs = require("fs");
 const path = require("path");
-const sha256 = require('crypto-js/sha256');
 const shopeeAPI = require('./helpers/shopeeAPI');
 const cjAPI = require('./helpers/cjAPI');
-const shopeeCredentials = require("./credentials/shopeeCredentials");
 
-console.log(`
-Shopee login URL:
-https://partner.uat.shopeemobile.com/api/v1/shop/auth_partner?id=${encodeURIComponent(shopeeCredentials.partnerId)}&token=${encodeURIComponent(sha256(shopeeCredentials.partnerKey + shopeeCredentials.testCallbackURL))}&redirect=${encodeURIComponent(shopeeCredentials.testCallbackURL)}
-========================
-`);
-
-
+print.shopeeLoginURL();
 
 (async () => {
 	let shopeeProducts;

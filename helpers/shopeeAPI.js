@@ -13,7 +13,7 @@ module.exports = {
 	getAllProducts: async function() {
 		const items = [];
 		let pagination_offset = 0;
-		let pagination_entries_per_page = 1;
+		let pagination_entries_per_page = 100;
 		await getAllProducts();
 
 		async function getAllProducts() {
