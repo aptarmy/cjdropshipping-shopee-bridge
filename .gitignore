@@ -1,5 +1,3 @@
-credentials/cjCredentials.js
-credentials/shopeeCredentials.js
 shopeeProducts.log
 cjProducts.log
 node_modules
