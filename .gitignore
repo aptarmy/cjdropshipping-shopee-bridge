@@ -4,3 +4,4 @@ shopeeProducts.log
 cjProducts.log
 node_modules
 .eslintrc.js
+.env
