@@ -1,3 +1,5 @@
+![](readme_imgs/app_screenshot.png)
+
 # Welcome to Shopee-CJ Stock Sync Tool
 This tool is created to sync stock between Shopee and CJ Dropshipping. Normally stock changes from suppliers in CJ won't lead to the update in the stock of connected Shopee store. This would lead to stock problems and affects the score of Shopee store. That's why I create this tool.
 
@@ -30,3 +32,5 @@ In this step just follow CJ Dropshipping tutorial, and make sure SKU from both p
 ## There are somethings you should take a note
 1) This tool will look at SKU in your Shopee products, so if you have already connected CJ products with your Shopee products, then make sure SKU of the item from 2 platforms is the same, including SKU of variants (like colors, size, etc.)
 2) If you type  in not-match SKU, then this tool cannot match your product on Shopee to your CJ connected product. This will result in cross sign in console like this figure below.
+
+![](readme_imgs/miss_matched_sku_warning.png)
